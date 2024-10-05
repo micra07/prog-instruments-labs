@@ -111,7 +111,6 @@ def py_get_full_arg_spec(fn):
         # 'signature' can raise ValueError (most common), AttributeError, and
         # possibly others. We catch all exceptions here, and reraise a TypeError.
         raise TypeError('Unsupported callable.')
-    
     args = []
     varargs = None
     varkw = None
@@ -120,14 +119,11 @@ def py_get_full_arg_spec(fn):
     annotations = {}
     defaults = ()
     kwdefaults = {}
-    
     if sig.return_annotation is not sig.empty:
         annotations['return'] = sig.return_annotation
-    
     for param in sig.parameters.values():
         kind = param.kind
         name = param.name
-    
         # pylint: disable=protected-access
         if kind is inspect._POSITIONAL_ONLY:
             args.append(name)
@@ -146,11 +142,9 @@ def py_get_full_arg_spec(fn):
         if param.annotation is not param.empty:
             annotations[name] = param.annotation
         # pylint: enable=protected-access
-        
         if not kwdefaults:
             # compatibility with 'func.__kwdefaults__'
             kwdefaults = None
-        
     if not defaults:
         # compatibility with 'func.__defaults__'
         defaults = None
@@ -164,15 +158,13 @@ def get_full_arg_spec(fn):
     """Returns a full_arg_spec describing the given callable."""
     original_fn = fn
     fn, skip_arg = get_arg_spec_info(fn)
-    
     try:
         if sys.version_info[0:2] >= (3, 5):
             (args, varargs, varkw, defaults,
              kwonlyargs, kwonlydefaults, annotations) = get_arg_spec_info(fn)
         else:  # Specifically Python 3.4.
             (args, varargs, varkw, defaults,
-             kwonlyargs, kwonlydefaults, annotations) = inspect.get_full_arg_spec(fn)  # pylint: disable=deprecated-method,no-member
-        
+             kwonlyargs, kwonlydefaults, annotations) = inspect.get_full_arg_spec(fn)  # pylint: disable=deprecated-method,no-member   
     except TypeError:
         # If we can't get the argspec, how do we know if the fn should take args?
         # 1. If it's a builtin, it can take args.
@@ -181,13 +173,11 @@ def get_full_arg_spec(fn):
         # 3. If it's another slot wrapper (that comes from not subclassing object in
         # Python 2), then there are no args.
         # Are there other cases? We just don't know.
-        
         # Case 1: Builtins accept args.
         if inspect.isbuiltin(fn):
             # TODO(dbieber): Try parsing the docstring, if available.
             # TODO(dbieber): Use known argspecs, like set.add and namedtuple.count.
             return FullArgSpec(varargs='vars', varkw='kwargs')
-
         # Case 2: namedtuples store their args in their _fields attribute.
         # TODO(dbieber): Determine if there's a way to detect false positives.
         # In Python 2, a class that does not subclass anything, does not define
@@ -196,10 +186,8 @@ def get_full_arg_spec(fn):
         fields = getattr(original_fn, '_fields', None)
         if fields is not None:
             return FullArgSpec(args=list(fields))
-
         # Case 3: Other known slot wrappers do not accept args.
         return FullArgSpec()
-        
     # In Python 3.5+ Py3GetFullArgSpec uses skip_bound_arg=True already.
     skip_arg_required = sys.version_info[0:2] == (3, 4)
     if skip_arg_required and skip_arg and args:
@@ -219,19 +207,16 @@ def det_file_and_line(component):
         lineno: The line number where component is defined.
     """
     if inspect.isbuiltin(component):
-        return None, None
-        
+        return None, None   
     try:
         filename = inspect.getsourcefile(component)
     except TypeError:
         return None, None
-    
     try:
         unused_code, lineindex = inspect.findsource(component)
         lineno = lineindex + 1
     except (OSError, IndexError):
-        lineno = None
-        
+        lineno = None  
     return filename, lineno
     
     
@@ -258,22 +243,18 @@ def get_info(component):
         from IPython.core import oinspect  # pylint: disable=import-outside-toplevel,g-import-not-at-top
         inspector = oinspect.Inspector()
         info = inspector.info(component)
-        
         # IPython's oinspect.Inspector.info may return '<no docstring>'
         if info['docstring'] == '<no docstring>':
             info['docstring'] = None
     except ImportError:
         info = get_info_backup(component)
-    
     try:
         unused_code, lineindex = inspect.findsource(component)
         info['line'] = lineindex + 1
     except (TypeError, OSError):
         info['line'] = None
-    
     if 'docstring' in info:
         info['docstring_info'] = docstrings.parse(info['docstring'])
-    
     return info
 
 
@@ -291,20 +272,16 @@ def get_info_backup(component):
         A dict with information about the component.
     """
     info = {}
-    
     info['type_name'] = type(component).__name__
     info['string_form'] = str(component)
-    
     filename, lineno = det_file_and_line(component)
     info['file'] = filename
     info['line'] = lineno
     info['docstring'] = inspect.getdoc(component)
-    
     try:
         info['length'] = str(len(component))
     except (TypeError, AttributeError):
         pass
-    
     return info
 
 
@@ -325,7 +302,6 @@ def check_named_tuple(component):
     """
     if not isinstance(component, tuple):
         return False
-
     has_fields = bool(getattr(component, '_fields', None))
     return has_fields
 
