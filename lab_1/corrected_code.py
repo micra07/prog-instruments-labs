@@ -346,3 +346,4 @@ def IsCoroutineFunction(fn):
         return asyncio.iscoroutinefunction(fn)
     except:  # pylint: disable=bare-except
         return False
+        
