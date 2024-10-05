@@ -27,24 +27,24 @@ class FullArgSpec:
 
     def __init__(self, args=None, varargs=None, varkw=None, defaults=None,
                  kwonlyargs=None, kwonlydefaults=None, annotations=None):
-      """Constructs a FullArgSpec with each provided attribute, or the default.
-    
-      Args:
-          args: A list of the argument names accepted by the function.
-          varargs: The name of the *varargs argument or None if there isn't one.
-          varkw: The name of the **kwargs argument or None if there isn't one.
-          defaults: A tuple of the defaults for the arguments that accept defaults.
-          kwonlyargs: A list of argument names that must be passed with a keyword.
-          kwonlydefaults: A dictionary of keyword only arguments and their defaults.
-          annotations: A dictionary of arguments and their annotated types.
-      """
-      self.args = args or []
-      self.varargs = varargs
-      self.varkw = varkw
-      self.defaults = defaults or ()
-      self.kwonlyargs = kwonlyargs or []
-      self.kwonlydefaults = kwonlydefaults or {}
-      self.annotations = annotations or {}
+        """Constructs a FullArgSpec with each provided attribute, or the default.
+        
+        Args:
+            args: A list of the argument names accepted by the function.
+            varargs: The name of the *varargs argument or None if there isn't one.
+            varkw: The name of the **kwargs argument or None if there isn't one.
+            defaults: A tuple of the defaults for the arguments that accept defaults.
+            kwonlyargs: A list of argument names that must be passed with a keyword.
+            kwonlydefaults: A dictionary of keyword only arguments and their defaults.
+            annotations: A dictionary of arguments and their annotated types.
+        """
+        self.args = args or []
+        self.varargs = varargs
+        self.varkw = varkw
+        self.defaults = defaults or ()
+        self.kwonlyargs = kwonlyargs or []
+        self.kwonlydefaults = kwonlydefaults or {}
+        self.annotations = annotations or {}
         
         
 def get_arg_spec_info(fn):
