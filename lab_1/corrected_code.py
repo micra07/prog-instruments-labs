@@ -47,7 +47,7 @@ class FullArgSpec:
       self.annotations = annotations or {}
         
         
-def _GetArgSpecInfo(fn):
+def get_arg_spec_info(fn):
     """Gives information pertaining to computing the ArgSpec of fn.
     
     Determines if the first arg is supplied automatically when fn is called.
@@ -85,7 +85,7 @@ def _GetArgSpecInfo(fn):
     return fn, skip_arg
         
         
-def Py3GetFullArgSpec(fn):
+def py_get_full_arg_spec(fn):
     """A alternative to the builtin getfullargspec.
     
     The builtin inspect.getfullargspec uses:
@@ -97,7 +97,7 @@ def Py3GetFullArgSpec(fn):
     Args:
         fn: The function or class of interest.
     Returns:
-        An inspect.FullArgSpec namedtuple with the full arg spec of the function.
+        An inspect.full_arg_spec namedtuple with the full arg spec of the function.
     """
     # pylint: disable=no-member
     # pytype: disable=module-attr
@@ -160,18 +160,18 @@ def Py3GetFullArgSpec(fn):
     # pytype: enable=module-attr
 
 
-def GetFullArgSpec(fn):
-    """Returns a FullArgSpec describing the given callable."""
+def get_full_arg_spec(fn):
+    """Returns a full_arg_spec describing the given callable."""
     original_fn = fn
-    fn, skip_arg = _GetArgSpecInfo(fn)
+    fn, skip_arg = get_arg_spec_info(fn)
     
     try:
         if sys.version_info[0:2] >= (3, 5):
             (args, varargs, varkw, defaults,
-             kwonlyargs, kwonlydefaults, annotations) = Py3GetFullArgSpec(fn)
+             kwonlyargs, kwonlydefaults, annotations) = get_arg_spec_info(fn)
         else:  # Specifically Python 3.4.
             (args, varargs, varkw, defaults,
-             kwonlyargs, kwonlydefaults, annotations) = inspect.getfullargspec(fn)  # pylint: disable=deprecated-method,no-member
+             kwonlyargs, kwonlydefaults, annotations) = inspect.get_full_arg_spec(fn)  # pylint: disable=deprecated-method,no-member
         
     except TypeError:
         # If we can't get the argspec, how do we know if the fn should take args?
@@ -208,7 +208,7 @@ def GetFullArgSpec(fn):
                        kwonlyargs, kwonlydefaults, annotations)
 
 
-def GetFileAndLine(component):
+def det_file_and_line(component):
     """Returns the filename and line number of component.
         
     Args:
@@ -235,7 +235,7 @@ def GetFileAndLine(component):
     return filename, lineno
     
     
-def Info(component):
+def get_info(component):
     """Returns a dict with information about the given component.
     
     The dict will have at least some of the following fields.
@@ -263,7 +263,7 @@ def Info(component):
         if info['docstring'] == '<no docstring>':
             info['docstring'] = None
     except ImportError:
-        info = _InfoBackup(component)
+        info = get_info_backup(component)
     
     try:
         unused_code, lineindex = inspect.findsource(component)
@@ -277,7 +277,7 @@ def Info(component):
     return info
 
 
-def _InfoBackup(component):
+def get_info_backup(component):
     """Returns a dict with information about the given component.
     
     This function is to be called only in the case that IPython's
@@ -295,7 +295,7 @@ def _InfoBackup(component):
     info['type_name'] = type(component).__name__
     info['string_form'] = str(component)
     
-    filename, lineno = GetFileAndLine(component)
+    filename, lineno = det_file_and_line(component)
     info['file'] = filename
     info['line'] = lineno
     info['docstring'] = inspect.getdoc(component)
@@ -308,7 +308,7 @@ def _InfoBackup(component):
     return info
 
 
-def IsNamedTuple(component):
+def check_named_tuple(component):
     """Return true if the component is a namedtuple.
     
     Unfortunately, Python offers no native way to check for a namedtuple type.
@@ -330,7 +330,7 @@ def IsNamedTuple(component):
     return has_fields
 
 
-def GetClassAttrsDict(component):
+def get_class_attrs_dict(component):
     """Gets the attributes of the component class, as a dict with name keys."""
     if not inspect.isclass(component):
         return None
@@ -341,7 +341,7 @@ def GetClassAttrsDict(component):
     }
 
 
-def IsCoroutineFunction(fn):
+def check_coroutine_function(fn):
     try:
         return asyncio.iscoroutinefunction(fn)
     except:  # pylint: disable=bare-except
