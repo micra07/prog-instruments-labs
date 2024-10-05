@@ -106,7 +106,8 @@ def py_get_full_arg_spec(fn):
             fn,
             skip_bound_arg=True,
             follow_wrapper_chains=True,
-            sigcls=inspect.Signature)
+            sigcls=inspect.Signature,
+        )
     except Exception:
         # 'signature' can raise ValueError (most common), AttributeError, and
         # possibly others. We catch all exceptions here, and reraise a TypeError.
