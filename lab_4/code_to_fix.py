@@ -356,4 +356,34 @@ def IsCoroutineFunction(fn):
     return asyncio.iscoroutinefunction(fn)
   except:  # pylint: disable=bare-except
     return False
+
+def test_function(a, b=5, *args, **kwargs):
+    return a + b
+
+class TestClass:
     
+    def __init__(self, x, y=10):
+        self.x = x
+        self.y = y
+
+    def method(self, z):
+        return self.x + self.y + z
+
+def main():
+  full_argspec = GetFullArgSpec(test_function)
+
+  filename, lineno = GetFileAndLine(test_function)
+
+  info = Info(TestClass)
+
+  from collections import namedtuple
+  ExampleNamedTuple = namedtuple("ExampleNamedTuple", ["field1", "field2"])
+  named_tuple_instance = ExampleNamedTuple(1, 2)
+
+  attrs_dict = GetClassAttrsDict(TestClass)
+
+  async def test_coroutine():
+        pass
+
+if __name__ == "__main__":
+    main()
