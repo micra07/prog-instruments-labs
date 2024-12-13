@@ -39,7 +39,7 @@ class FullArgSpec:
       kwonlydefaults: A dictionary of keyword only arguments and their defaults.
       annotations: A dictionary of arguments and their annotated types.
     """
-    logger.debug("Инициализация FullArgSpec с параметрами: args={}, varargs={}, varkw={}".format(args, varargs, varkw))
+    logger.debug("Инициализация FullArgSpec с параметрами: args={args}, varargs={varargs}, varkw={varkw}", args=args, varargs=varargs, varkw=varkw)
     self.args = args or []
     self.varargs = varargs
     self.varkw = varkw
@@ -114,7 +114,7 @@ def Py3GetFullArgSpec(fn):
   except Exception:
     # 'signature' can raise ValueError (most common), AttributeError, and
     # possibly others. We catch all exceptions here, and reraise a TypeError.
-    logger.error(f"Ошибка при получении спецификации аргументов")
+    logger.error("Ошибка при получении спецификации аргументов")
     raise TypeError('Unsupported callable.')
 
   args = []
