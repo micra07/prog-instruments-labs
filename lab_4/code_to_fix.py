@@ -68,7 +68,7 @@ def _GetArgSpecInfo(fn):
       skip_arg: Whether the first argument will be supplied automatically, and
         hence should be skipped when supplying args from a Fire command.
   """
-  logger.debug(f"Получение ArgSpecInfo для {fn}")
+  logger.debug("Получение ArgSpecInfo для {}", fn)
   skip_arg = False
   if inspect.isclass(fn):
     # If the function is a class, we try to use its init method.
@@ -104,7 +104,7 @@ def Py3GetFullArgSpec(fn):
   """
   # pylint: disable=no-member
   # pytype: disable=module-attr
-  logger.debug(f"Получение полной спецификации аргументов для {fn}")
+  logger.debug("Получение полной спецификации аргументов для {}", fn)
   try:
     sig = inspect._signature_from_callable(  # pylint: disable=protected-access
         fn,
@@ -167,7 +167,7 @@ def Py3GetFullArgSpec(fn):
 
 def GetFullArgSpec(fn):
   """Returns a FullArgSpec describing the given callable."""
-  logger.info(f"Получение полной спецификации для функции: {fn}")
+  logger.info("Получение полной спецификации для функции: {}", fn)
   original_fn = fn
   fn, skip_arg = _GetArgSpecInfo(fn)
 
@@ -227,7 +227,7 @@ def GetFileAndLine(component):
   
   if inspect.isbuiltin(component):
     return None, None
-  logger.debug(f"Получение информации о файле и строке для {component}")
+  logger.debug("Получение информации о файле и строке для {}", component)
   try:
     filename = inspect.getsourcefile(component)
   except TypeError:
@@ -261,7 +261,7 @@ def Info(component):
   Returns:
     A dict with information about the component.
   """
-  logger.debug(f"Анализ компонента: {component}")
+  logger.debug("Анализ компонента: {}", component)
   try:
     from IPython.core import oinspect  # pylint: disable=import-outside-toplevel,g-import-not-at-top
     inspector = oinspect.Inspector()
@@ -270,7 +270,7 @@ def Info(component):
     # IPython's oinspect.Inspector.info may return '<no docstring>'
     if info['docstring'] == '<no docstring>':
       info['docstring'] = None
-    logger.info(f"Информация о компоненте: {info}")
+    logger.info("Информация о компоненте: {}", info)
   except ImportError:
     info = _InfoBackup(component)
 
@@ -299,7 +299,7 @@ def _InfoBackup(component):
   Returns:
     A dict with information about the component.
   """
-  logger.debug(f"Резервное получение информации для компонента: {component}")
+  logger.debug("Резервное получение информации для компонента: {}", component)
   info = {}
 
   info['type_name'] = type(component).__name__
