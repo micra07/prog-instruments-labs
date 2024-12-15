@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock, patch
-from code_to_fix import FullArgSpec, _GetArgSpecInfo, Py3GetFullArgSpec, IsNamedTuple, IsCoroutineFunction
+from code_to_fix import FullArgSpec, _GetArgSpecInfo, Py3GetFullArgSpec, IsNamedTuple, IsCoroutineFunction, GetFileAndLine, Info
 
 # 1.
 def test_fullargspec_init():
@@ -54,6 +54,28 @@ def test_is_coroutine_function():
 
     assert IsCoroutineFunction(async_func) is True
     assert IsCoroutineFunction(regular_func) is False
+
+# 6.
+@patch('code_to_fix.inspect.getsourcefile', return_value='example.py')
+@patch('code_to_fix.inspect.findsource', return_value=([], 10))
+def test_getfileandline(mock_getsourcefile, mock_findsource):
+    def mock_function():
+        pass
+
+    filename, lineno = GetFileAndLine(mock_function)
+    assert filename == 'example.py'
+    assert lineno == 11
+
+# 7.
+@patch('code_to_fix.inspect.getdoc', return_value='Sample docstring')
+def test_info_with_mock(mock_getdoc):
+    def mock_function():
+        pass
+
+    info = Info(mock_function)
+    assert info['docstring'] == 'Sample docstring'
+    assert 'type_name' in info
+    assert 'string_form' in info
 
 if __name__ == "__main__":
     pytest.main(['-q', '--disable-warnings', '--maxfail=1', 'tests.py'])
