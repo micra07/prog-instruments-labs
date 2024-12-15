@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock, patch
-from code_to_fix import FullArgSpec, _GetArgSpecInfo, Py3GetFullArgSpec
+from code_to_fix import FullArgSpec, _GetArgSpecInfo, Py3GetFullArgSpec, IsNamedTuple, IsCoroutineFunction
 
 # 1.
 def test_fullargspec_init():
@@ -32,6 +32,28 @@ def test_py3getfullargspec_simple_function():
     assert spec.defaults == (1,)
     assert spec.varargs is None
     assert spec.varkw is None
+
+# 4.
+def test_is_namedtuple():
+    from collections import namedtuple
+
+    Point = namedtuple('Point', ['x', 'y'])
+    p = Point(1, 2)
+    t = (1, 2)
+
+    assert IsNamedTuple(p) is True
+    assert IsNamedTuple(t) is False
+
+# 5.
+def test_is_coroutine_function():
+    async def async_func():
+        pass
+
+    def regular_func():
+        pass
+
+    assert IsCoroutineFunction(async_func) is True
+    assert IsCoroutineFunction(regular_func) is False
 
 if __name__ == "__main__":
     pytest.main(['-q', '--disable-warnings', '--maxfail=1', 'tests.py'])
