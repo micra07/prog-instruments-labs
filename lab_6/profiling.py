@@ -2,7 +2,6 @@ import cProfile
 import pstats
 from memory_profiler import profile
 from line_profiler import LineProfiler
-from pyheat import PyHeat
 import os
 
 # Импортируем основной модуль программы
@@ -13,7 +12,7 @@ OUTPUT_DIR = os.path.abspath("./profiling_results")
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
-def run_with_cprofile():
+def run_with_cprofile(file,saving_file):
     """
     Выполняет профилирование программы с использованием cProfile
     и сохраняет результаты.
@@ -22,35 +21,38 @@ def run_with_cprofile():
     profiler.enable()
 
     # Выполняем основную функцию
-    main.main()
+    file.main()
 
     profiler.disable()
 
     # Сохраняем результаты
-    stats_path = os.path.join(OUTPUT_DIR, "cprofile_output.txt")
+    stats_path = os.path.join(OUTPUT_DIR, saving_file)
     with open(stats_path, "w") as f:
         stats = pstats.Stats(profiler, stream=f)
         stats.sort_stats('cumtime').print_stats()
     print(f"cProfile results saved to {stats_path}")
 
-def run_with_memory_profiler():
+def run_with_memory_profiler(file):
     """
     Выполняет профилирование программы с использованием memory_profiler
     и выводит построчное использование памяти.
     """
     @profile
     def profiled_main():
-        main.main()
+        file.main()
 
     profiled_main()
 
-def run_with_line_profiler():
+def run_with_line_profiler(file,saving_file):
     """
     Выполняет профилирование программы с использованием line_profiler
     для построчного анализа времени выполнения.
     """
     profiler = LineProfiler()
-    profiler.add_function(main.main)  # Добавляем функцию для профилирования
+    profiler.add_function(file.main)  # Добавляем функцию для профилирования
+    profiler.add_function(file.frequency_bitwise_test)  # Профилируем частотный тест
+    profiler.add_function(file.similar_sequences_test)  # Профилируем тест последовательностей
+    profiler.add_function(file.longest_ones_sequence_test)  # Профилируем тест на длинные последовательности
 
     profiler.enable_by_count()
     main.main()
@@ -62,33 +64,18 @@ def run_with_line_profiler():
         profiler.print_stats(stream=f)
     print(f"LineProfiler results saved to {stats_path}")
 
-def run_with_pyheat():
-    """
-    Выполняет визуализацию профилирования с использованием PyHeat
-    и сохраняет тепловую карту как PNG.
-    """
-    heatmap_path = os.path.join(OUTPUT_DIR, "pyheat_output.png")
-    ph = PyHeat(main.__file__)
-    ph.create_heatmap()
-    ph.show_heatmap(heatmap_path)  # Сохраняем тепловую карту в PNG
-    print(f"PyHeat heatmap saved to {heatmap_path}")
-
 def main_analysis():
     """
     Запускает все методы профилирования.
     """
     print("Running cProfile...")
-    run_with_cprofile()
+    run_with_cprofile(main, "cprofile_output.txt")
 
     print("\nRunning memory_profiler...")
-    run_with_memory_profiler()
+    run_with_memory_profiler(main)
 
     print("\nRunning line_profiler...")
-    run_with_line_profiler()
-
-    print("\nRunning PyHeat...")
-    run_with_pyheat()
-
+    run_with_line_profiler(main, "line_profiler_output.txt")
 
 if __name__ == "__main__":
     main_analysis()
