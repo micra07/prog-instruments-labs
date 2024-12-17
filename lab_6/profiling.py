@@ -6,6 +6,7 @@ import os
 
 # Импортируем основной модуль программы
 import main
+import optimized_code
 
 # Путь для сохранения результатов профилирования
 OUTPUT_DIR = os.path.abspath("./profiling_results")
@@ -59,7 +60,7 @@ def run_with_line_profiler(file,saving_file):
     profiler.disable()
 
     # Сохраняем результаты
-    stats_path = os.path.join(OUTPUT_DIR, "line_profiler_output.txt")
+    stats_path = os.path.join(OUTPUT_DIR, saving_file)
     with open(stats_path, "w") as f:
         profiler.print_stats(stream=f)
     print(f"LineProfiler results saved to {stats_path}")
@@ -73,9 +74,25 @@ def main_analysis():
 
     print("\nRunning memory_profiler...")
     run_with_memory_profiler(main)
+    print ("Результат memory_profiler для исходного кода")
 
     print("\nRunning line_profiler...")
     run_with_line_profiler(main, "line_profiler_output.txt")
 
+def optimized_code_analysis():
+    """
+    Запускает все методы профилирования.
+    """
+    print("Running cProfile...")
+    run_with_cprofile(optimized_code, "cprofile_output_for_optimized_code.txt")
+
+    print("\nRunning memory_profiler...")
+    run_with_memory_profiler(optimized_code)
+    print ("Результат memory_profiler для оптимизированного кода")
+
+    print("\nRunning line_profiler...")
+    run_with_line_profiler(optimized_code, "line_profiler_output_for_optimized_code.txt")
+
 if __name__ == "__main__":
     main_analysis()
+    optimized_code_analysis()
