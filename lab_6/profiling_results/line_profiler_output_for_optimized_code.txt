@@ -1,0 +1,130 @@
+Timer unit: 1e-07 s
+
+Total time: 0.0001415 s
+File: c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py
+Function: frequency_bitwise_test at line 26
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    26                                           def frequency_bitwise_test(sequence: str) -> float:
+    27                                               """
+    28                                               Performs a frequency bitwise test.
+    29                                           
+    30                                               Parameters: 
+    31                                               The binary sequence to test.
+    32                                           
+    33                                               Returns: 
+    34                                               The P-value calculated by the statistical test.
+    35                                               """
+    36         2         43.0     21.5      3.0      try:
+    37         2         72.0     36.0      5.1          N = len(sequence)
+    38         2        187.0     93.5     13.2          sum = sequence.count("1") - sequence.count("0")
+    39         2        181.0     90.5     12.8          S_N = abs(sum) / math.sqrt(N)
+    40         2        820.0    410.0     58.0          P_value = erfc(S_N / math.sqrt(2))
+    41         2         95.0     47.5      6.7          if P_value < 0 or P_value > 1:
+    42                                                       raise ValueError('Error: P should be in range [0, 1]')
+    43         2         17.0      8.5      1.2          return P_value
+    44                                               except Exception as e:
+    45                                                   print(f"Error: {e}")
+    46                                                   raise
+
+Total time: 0.0006113 s
+File: c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py
+Function: similar_sequences_test at line 49
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    49                                           def similar_sequences_test(sequence: str) -> float:
+    50                                               """
+    51                                               Performs a test for the same consecutive bits.
+    52                                               
+    53                                               Parameters:
+    54                                               The binary sequence to test.
+    55                                               
+    56                                               Returns:
+    57                                               The P-value calculated by the statistical test.
+    58                                               """
+    59         2         39.0     19.5      0.6      try:
+    60         2         57.0     28.5      0.9          N = len(sequence)
+    61         2        102.0     51.0      1.7          sum_of_ones = sequence.count("1")
+    62         2         36.0     18.0      0.6          proportion_of_ones = sum_of_ones / N
+    63         2        145.0     72.5      2.4          if abs(proportion_of_ones - 0.5) >= 2 / math.sqrt(N):
+    64                                                       return 0
+    65                                           
+    66         2       5055.0   2527.5     82.7          transitions = sum(1 for i in range(N - 1) if sequence[i] != sequence[i + 1])
+    67         2         71.0     35.5      1.2          term = 2 * N * proportion_of_ones * (1 - proportion_of_ones)
+    68         2         52.0     26.0      0.9          deviation = abs(transitions - term)
+    69         2        468.0    234.0      7.7          P_value = erfc(deviation / (2 / math.sqrt(2 * N) * term))
+    70         2         70.0     35.0      1.1          if P_value < 0 or P_value > 1:
+    71                                                       raise ValueError('Error: P should be in range [0, 1]')
+    72         2         18.0      9.0      0.3          return P_value
+    73                                               except Exception as e:
+    74                                                   print(f"Error: {e}")
+    75                                                   raise
+
+Total time: 0.0072405 s
+File: c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py
+Function: longest_ones_sequence_test at line 78
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    78                                           def longest_ones_sequence_test(sequence: str) -> float:
+    79                                               """
+    80                                               Performs a test for the longest sequence of units in the block.
+    81                                               
+    82                                               Parameters:
+    83                                               The binary sequence to test..
+    84                                               
+    85                                               Returns:
+    86                                               The P-value calculated by the statistical test.
+    87                                               """
+    88         2         35.0     17.5      0.0      try:
+    89         2         33.0     16.5      0.0          block_size = M
+    90         2        201.0    100.5      0.3          blocks = (sequence[i:i + block_size] for i in range(0, len(sequence), block_size))
+    91         2         55.0     27.5      0.1          V = [0] * 4
+    92                                           
+    93        34       1453.0     42.7      2.0          for block in blocks:
+    94        32       6681.0    208.8      9.2              max_length = max((len(s) for s in block.split("0")), default=0)
+    95        32        648.0     20.2      0.9              if max_length <= 1:
+    96         6         86.0     14.3      0.1                  V[0] += 1
+    97        26        279.0     10.7      0.4              elif max_length == 2:
+    98        16        275.0     17.2      0.4                  V[1] += 1
+    99        10        112.0     11.2      0.2              elif max_length == 3:
+   100         4        113.0     28.2      0.2                  V[2] += 1
+   101                                                       else:
+   102         6         87.0     14.5      0.1                  V[3] += 1
+   103                                           
+   104         2        549.0    274.5      0.8          Xi_2 = sum((V[i] - 16 * P_I[i]) ** 2 / (16 * P_I[i]) for i in range(4))
+   105         2      60798.0  30399.0     84.0          P_value = gammainc(1.5, Xi_2 / 2)
+   106         2        985.0    492.5      1.4          if P_value < 0 or P_value > 1:
+   107                                                       raise ValueError('Error: P should be in range [0, 1]')
+   108         2         15.0      7.5      0.0          return P_value
+   109                                               except Exception as e:
+   110                                                   print(f"Error: {e}")
+   111                                                   raise
+
+Total time: 0.0115207 s
+File: c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py
+Function: main at line 113
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   113                                           def main() -> None:
+   114                                               """
+   115                                               Main function for output of results.
+   116                                               """
+   117         1        343.0    343.0      0.3      absolute_path = os.path.abspath(os.getcwd())
+   118         1       7074.0   7074.0      6.1      json_data = read_json_file(absolute_path + PATH)
+   119         1         10.0     10.0      0.0      if json_data:
+   120         1         33.0     33.0      0.0          cpp_sequence = json_data.get("cpp_generator", "")
+   121         1         12.0     12.0      0.0          java_sequence = json_data.get("java_generator", "")
+   122         1         13.0     13.0      0.0      if cpp_sequence and java_sequence:
+   123         1       3725.0   3725.0      3.2          print("Tests for cpp_sequence:")
+   124         1       3990.0   3990.0      3.5          print("Frequency bitwise test: P = " + str(frequency_bitwise_test(cpp_sequence)))
+   125         1       6050.0   6050.0      5.3          print("Similar sequences test: P = " + str(similar_sequences_test(cpp_sequence)))
+   126         1      45449.0  45449.0     39.4          print("Longest ones sequence test: P = " + str(longest_ones_sequence_test(cpp_sequence)))
+   127         1       2200.0   2200.0      1.9          print("Tests for java_sequence:")
+   128         1       3336.0   3336.0      2.9          print("Frequency bitwise test: P = " + str(frequency_bitwise_test(java_sequence)))
+   129         1       5383.0   5383.0      4.7          print("Similar sequences test: P = " + str(similar_sequences_test(java_sequence)))
+   130         1      37589.0  37589.0     32.6          print("Longest ones sequence test: P = " + str(longest_ones_sequence_test(java_sequence)))
+

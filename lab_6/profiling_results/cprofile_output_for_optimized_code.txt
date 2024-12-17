@@ -1,0 +1,168 @@
+         1892 function calls (1885 primitive calls) in 0.009 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.009    0.009 c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py:113(main)
+        2    0.000    0.000    0.006    0.003 c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py:78(longest_ones_sequence_test)
+        2    0.000    0.000    0.005    0.003 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\expintegrals.py:133(gammainc)
+        2    0.000    0.000    0.005    0.002 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\expintegrals.py:186(_upper_gamma)
+        4    0.000    0.000    0.005    0.001 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:58(hypercomb)
+        6    0.000    0.000    0.003    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:194(hyper)
+        4    0.000    0.000    0.003    0.001 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp.py:666(hypsum)
+        2    0.000    0.000    0.002    0.001 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libhyper.py:64(make_hyp_summator)
+        8    0.002    0.000    0.002    0.000 {built-in method builtins.print}
+        2    0.000    0.000    0.002    0.001 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:977(_hyp2f0)
+        2    0.002    0.001    0.002    0.001 {built-in method builtins.exec}
+        2    0.000    0.000    0.001    0.001 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:309(_hyp1f1)
+        1    0.000    0.000    0.001    0.001 c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py:9(read_json_file)
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:989(f)
+       74    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        2    0.000    0.000    0.000    0.000 <string>:1(hypsum_2_0_ZQ__R)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\expintegrals.py:214(h)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:128(<listcomp>)
+        2    0.000    0.000    0.000    0.000 c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py:49(similar_sequences_test)
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_base.py:413(power)
+       28    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:623(convert)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:126(<listcomp>)
+       10    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp.py:1211(fprod)
+        6    0.000    0.000    0.000    0.000 <string>:2(__pow__)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\expintegrals.py:219(h)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:4(_check_need_perturb)
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libelefun.py:318(mpf_pow)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\gammazeta.py:1695(mpf_gamma)
+       16    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:291(from_man_exp)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py:274(load)
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp.py:1113(nint_distance)
+      200    0.000    0.000    0.000    0.000 c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py:94(<genexpr>)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:141(__str__)
+        2    0.000    0.000    0.000    0.000 c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py:26(frequency_bitwise_test)
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libelefun.py:1151(mpf_exp)
+       10    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:169(_cmp)
+      126    0.000    0.000    0.000    0.000 c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py:66(<genexpr>)
+        2    0.000    0.000    0.000    0.000 <string>:1(hypsum_1_1_Z_Q_R)
+       16    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:612(_set_prec)
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:180(__gt__)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:1205(to_str)
+       12    0.000    0.000    0.000    0.000 <string>:2(__mul__)
+        4    0.000    0.000    0.000    0.000 <string>:2(__sub__)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:410(from_float)
+      3/2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libelefun.py:94(g)
+        8    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libelefun.py:304(sqrtpi_fixed)
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:202(<listcomp>)
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:1032(_convert_param)
+       38    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libintmath.py:91(python_bitcount)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libelefun.py:1086(exp_basecase)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:1153(to_digits_exp)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:797(mpf_sub)
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:1042(mpf_pow_int)
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.TextIOWrapper' objects}
+       38    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:208(_normalize1)
+        1    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libelefun.py:233(pi_fixed)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:1368(mpf_sqrt)
+       16    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:59(prec_to_dps)
+        8    0.000    0.000    0.000    0.000 <string>:2(__eq__)
+       24    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:597(make_mpf)
+       12    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:884(python_mpf_mul)
+       14    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:153(_normalize)
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:702(mpf_add)
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:636(mpf_gt)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py:299(loads)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:832(fsum)
+       76    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libhyper.py:299(<genexpr>)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:201(__rdiv__)
+      197    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp.py:784(fneg)
+       98    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       10    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:574(mpf_cmp)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\decoder.py:332(decode)
+       38    0.000    0.000    0.000    0.000 {built-in method _bisect.bisect_right}
+       24    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:330(from_int)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:184(__ne__)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\rational.py:31(__new__)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:987(mpf_rdiv_int)
+      7/1    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libelefun.py:211(bs_chudnovsky)
+       10    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:653(mpf_pos)
+       61    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x00007FFBD4CE0FD0}
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:157(__pos__)
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:179(__lt__)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libintmath.py:279(sqrtrem_python)
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_base.py:340(_default_hyper_maxprec)
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:203(<listcomp>)
+        1    0.000    0.000    0.000    0.000 <frozen ntpath>:570(abspath)
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:1091(mag)
+       34    0.000    0.000    0.000    0.000 c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py:90(<genexpr>)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:163(__neg__)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:802(mpf_sum)
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:100(mpf_convert_rhs)
+        2    0.000    0.000    0.000    0.000 <string>:2(__add__)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\functions.py:274(re)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:950(mpf_div)
+       86    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+       32    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       46    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       10    0.000    0.000    0.000    0.000 c:\Users\micra\OneDrive\Рабочий стол\test\optimized_code.py:104(<genexpr>)
+       32    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:620(<lambda>)
+       16    0.000    0.000    0.000    0.000 {built-in method builtins.round}
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:142(<listcomp>)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libintmath.py:205(isqrt_small_python)
+       28    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.000    0.000 <frozen ntpath>:538(normpath)
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\rational.py:7(create_reduced)
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:663(mpf_neg)
+        6    0.000    0.000    0.000    0.000 {method 'count' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:626(mpf_lt)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libintmath.py:149(numeral_python)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libintmath.py:231(isqrt_fast_python)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libhyper.py:177(<listcomp>)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp.py:639(_parse_prec)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:319(decode)
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:537(mpf_eq)
+        1    0.000    0.000    0.000    0.000 C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\decoder.py:343(raw_decode)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:785(isint)
+        8    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+        6    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:692(mpf_sign)
+       12    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:147(__nonzero__)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:309(__init__)
+       17    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+        2    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+       10    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:107(<listcomp>)
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.divmod}
+        4    0.000    0.000    0.000    0.000 {built-in method math.log}
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:1081(_mpf_mag)
+        1    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libintmath.py:303(sqrt_fixed)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libintmath.py:368(ifac2)
+        1    0.000    0.000    0.000    0.000 {built-in method nt._getfullpathname}
+        1    0.000    0.000    0.000    0.000 {built-in method nt.getcwd}
+        4    0.000    0.000    0.000    0.000 {built-in method math.frexp}
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libintmath.py:131(bin_to_radix)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\rational.py:72(__eq__)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libintmath.py:138(small_numeral)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libhyper.py:183(<listcomp>)
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libmpf.py:509(to_fixed)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libhyper.py:178(<listcomp>)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libhyper.py:179(<listcomp>)
+        8    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp_python.py:128(<lambda>)
+        1    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libhyper.py:182(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:260(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
+        4    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\functions\hypergeometric.py:127(<listcomp>)
+        2    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 {built-in method nt._path_normpath}
+        1    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\libmp\libhyper.py:181(<listcomp>)
+        2    0.000    0.000    0.000    0.000 C:\Users\micra\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\mpmath\ctx_mp.py:404(_str_digits)
+        2    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method nt.fspath}
+
+
