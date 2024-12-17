@@ -1,0 +1,27 @@
+Timer unit: 1e-07 s
+
+Total time: 0.0099313 s
+File: c:\Users\micra\OneDrive\Рабочий стол\test\main.py
+Function: main at line 139
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   139                                           def main() -> None:
+   140                                               """
+   141                                               Main function for output of results.
+   142                                               """
+   143         1        276.0    276.0      0.3      absolute_path = os.path.abspath(os.getcwd())
+   144         1       5838.0   5838.0      5.9      json_data = read_json_file(absolute_path + PATH)
+   145         1         10.0     10.0      0.0      if json_data:
+   146         1         22.0     22.0      0.0          cpp_sequence = json_data.get("cpp_generator", "")
+   147         1         12.0     12.0      0.0          java_sequence = json_data.get("java_generator", "")
+   148         1         14.0     14.0      0.0      if cpp_sequence and java_sequence:
+   149         1       1575.0   1575.0      1.6          print("Tests for cpp_sequence:")
+   150         1       4224.0   4224.0      4.3          print("Frequency bitwise test: P = " + str(frequency_bitwise_test(cpp_sequence)))
+   151         1       6039.0   6039.0      6.1          print("Similar sequences test: P = " + str(similar_sequences_test(cpp_sequence)))
+   152         1      34928.0  34928.0     35.2          print("Longest ones sequence test: P = " + str(longest_ones_sequence_test(cpp_sequence)))
+   153         1       1560.0   1560.0      1.6          print("Tests for java_sequence:")
+   154         1       5189.0   5189.0      5.2          print("Frequency bitwise test: P = " + str(frequency_bitwise_test(java_sequence)))
+   155         1       6795.0   6795.0      6.8          print("Similar sequences test: P = " + str(similar_sequences_test(java_sequence)))
+   156         1      32831.0  32831.0     33.1          print("Longest ones sequence test: P = " + str(longest_ones_sequence_test(java_sequence)))
+
