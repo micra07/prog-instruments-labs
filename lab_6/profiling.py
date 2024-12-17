@@ -55,7 +55,7 @@ def run_with_line_profiler(file,saving_file):
     profiler.add_function(file.longest_ones_sequence_test)  # Профилируем тест на длинные последовательности
 
     profiler.enable_by_count()
-    main.main()
+    file.main()
     profiler.disable()
 
     # Сохраняем результаты
